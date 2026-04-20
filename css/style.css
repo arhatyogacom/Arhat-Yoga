@@ -1,0 +1,486 @@
+/* ---------- ПЕРЕМЕННЫЕ И СБРОС ---------- */
+:root {
+  --beige: #f5c690;
+  --gray-light: #f2f7f7;
+  --footer-dark: #393836;
+  --text-dark: #2e2b28;
+  --text-soft: #4a4642;
+  --white: #ffffff;
+--font-serif: 'Tilda Sans', Georgia, serif;
+--font-sans: 'Tilda Sans', -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--white);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.section-title:after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--beige);
+  margin: 20px auto 0;
+}
+
+/* Подключаем шрифт Tilda Sans */
+
+@font-face {
+  font-family: 'Tilda Sans';
+  src: url('../fonts/TildaSans-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tilda Sans';
+  src: url('../fonts/TildaSans-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tilda Sans';
+  src: url('../fonts/TildaSans-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Tilda Sans';
+  src: url('../fonts/TildaSans-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+/* ---------- ГЛАВНЫЙ ЭКРАН  ---------- */
+
+.hero {
+  padding-top: 100px;
+  padding-bottom: 10px;
+  background-color: #f5c690;
+}
+
+.hero__inner {
+  text-align: center;
+  max-width: 900px;
+}
+
+.hero__title {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.1;
+ /* letter-spacing: 2px; расстояние между буквами*/
+  color: var(--text-dark);
+}
+
+.hero__subtitle {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: var(--text-soft);
+  margin-bottom: 30px;
+}
+
+.hero__badge {
+  display: inline-block;
+  background: var(--beige);
+  padding: 16px 40px;
+   font-size: 1.5rem;
+  font-weight: 400;
+  font-family: var(--font-serif);
+  color: var(--text-dark);
+}
+
+/* ---------- О МАСТЕРЕ ---------- */
+.about-master {
+   padding-top: 30px;
+  padding-bottom: 70px;
+  background:#f5c690
+}
+
+.about-master__grid {
+  display: grid;
+  grid-template-columns: auto 1fr;   /* остаётся как есть */
+  gap: 20px;
+  justify-content: center;           /* ← центрирует сетку по горизонтали */
+  width: fit-content;                /* ← ширина сетки равна содержимому */
+  margin: 0 auto;                    /* ← дополнительное авто-центрирование (для старых браузеров) */
+}
+
+.h_masterlist {
+  position: relative;
+  font-size: 1.3rem;
+}
+
+.about-master__list {
+  list-style: none;
+  margin-bottom: 10px;           
+}
+
+.about-master__list li {
+  padding: 0px 0px 0px 0px;
+  position: relative;
+  font-size: 1.3rem;
+  line-height: 1.2; 
+}
+
+.about-master__list li:before {
+  content: "•";
+  color: #393836 ;
+  font-size: 2.0rem;
+  position:relative;
+  left: -5px;
+  top: 0px;
+}
+
+.link-more {
+  color: var(--text-dark);
+  text-decoration:line-through
+  font-weight: 800;
+  border-bottom: 2px solid var(--blue);
+  padding-bottom: 4px;
+}
+
+.about-master__avatar {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+   margin: 0;
+}
+
+.about-master__avatar img {
+  width: 200px;            /* регулируйте размер по желанию */
+  height: 200px;
+  object-fit:cover;       /* чтобы фото заполнило круг без искажений */
+  border-radius: 50%;      /* делает изображение круглым */
+  object-position: center 20%; /* или center 20% */
+}
+
+/* ---------- ВСТУПИТЕЛЬНЫЙ ТЕКСТ ---------- */
+.intro-text {
+  padding: 60px 0px 20px 0px ;
+  background: var(--gray-light);
+}
+
+.intro-text__inner {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.intro-text__inner p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  color: var(--text-soft);
+}
+
+/* ГАЛЕРЕЯ (ПАНОРАМНАЯ КАРУСЕЛЬ) */
+
+.gallery-section {
+  padding: 0px 0px 50px 0px;
+  background: #f5c690;
+}
+
+.gallery-slider {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.05);
+}
+
+.gallery-slides {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+  gap: 10px; /* расстояние между слайдами */
+}
+
+.gallery-slide {
+  flex: 0 0 calc(33.333% - 7px); /* три слайда в ряд с учётом gap */
+}
+
+.gallery-slide img {
+  width: 100%;
+  height: 250px; /* была 550px — уменьшили в ~2 раза */
+  object-fit: cover;
+  display: block;
+  border-radius: 15px;
+}
+
+.gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  border: none;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: 0.2s;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
+.gallery-arrow:hover {
+  background: #f5c690;
+  color: var(--white);
+}
+
+.gallery-arrow--prev { left: 25px; }
+.gallery-arrow--next { right: 25px; }
+
+.gallery-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.gallery-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  cursor: pointer;
+  transition: 0.2s;
+  border: 1px solid var(--beige);
+}
+
+.gallery-dot.active {
+  background: #f5c690;
+  transform: scale(1.3);
+}
+
+/* ---------- БЛОК С ИЗОБРАЖЕНИЯМИ И ТЕКСТОМ ---------- */
+.familiar {
+  padding: 0px 0px 0px 0px;
+  background: #f2f7f7;
+}
+
+.familiar__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Ряд изображений */
+.familiar__images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.familiar__image {
+  aspect-ratio: 1 / 1;  /* квадрат */
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.familiar__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Ряд текстов */
+.familiar__texts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.familiar__text {
+  font-size: 1.2rem;
+  line-height: 1.1;
+  text-align: left;
+  color: var(--text-dark);
+  font-weight: 400;
+  padding: 0 5px;
+}
+
+/* ---------- ВОЗРАСТНОЕ? ---------- */
+.age-question {
+  padding: 80px 0;
+  background: #f2f7f7;
+  text-align: center;
+}
+
+.age-question__inner {
+  max-width: 800px;
+}
+
+.age-question__title {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-dark);
+   padding: 0px 0px 60px 0px;
+}
+
+.age-question__text {
+  font-size: 1.4rem;
+  margin-bottom: 40px;
+  color: var(--text-soft);
+}
+
+/* ---------- ПОШАГОВЫЙ ПЛАН (ДВЕ КОЛОНКИ) ---------- */
+.target-audience {
+  padding: 80px 0;
+  background:#f5c690;
+}
+
+.target-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.target-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.target-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.target-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  margin-top: 4px;
+}
+
+.section-title {
+ font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 300;
+  line-height: 1.1;
+  color: var(--text-dark);
+}
+/*Выбирай свой мессенджер*/
+.section-subtitle {
+    font-size: 1.4rem;
+    text-align: center;
+  margin-bottom: 60px;
+  color: var(--text-soft);
+  text-transform: uppercase;
+}
+
+.target-item span {
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--text-dark);
+  font-weight: 400;
+  font-family: var(--font-sans);
+}
+
+/* Убираем линию под заголовком */
+.section-title:after {
+  display: none;
+}
+
+
+/*Кнопки для перехода в бот*/
+
+.messengers {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 60px;
+}
+
+.messenger-btn {
+  display: inline-block;
+  border: none;
+}
+
+.messenger-btn:hover {
+  transform: translateY(-5px);
+} 
+
+.messenger-btn img {
+  display: block;
+  width: auto;
+  height: 50px;
+  margin: 5;
+  padding: 0;
+  border: none;
+}
+
+/* ---------- ФУТЕР ---------- */
+
+.footer {
+  background: var(--footer-dark);
+  color: rgba(255,255,255,0.7);
+  padding: 20px 0;
+}
+
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer__logo {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+.footer__text {
+  color: #7c7266;
+  font-size: 1rem;
+  font-weight: 400;
+}
