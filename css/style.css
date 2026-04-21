@@ -484,3 +484,166 @@ body {
   font-size: 1rem;
   font-weight: 400;
 }
+
+/* ========== АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ (≤ 768px) ========== */
+
+@media (max-width: 768px) {
+  
+  /* Общие контейнеры */
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Главный экран */
+  .hero {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+  .hero__badge {
+    padding: 12px 24px;
+    font-size: 1.2rem;
+  }
+  .hero__title {
+    font-size: 2.8rem;
+  }
+  .hero__subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+
+  /* О мастере */
+  .about-master {
+    padding: 30px 0 40px;
+  }
+  .about-master__grid {
+    grid-template-columns: 1fr;       /* колонка одна */
+    width: 100%;
+    gap: 20px;
+  }
+  .about-master__info h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .about-master__list li {
+    font-size: 1.1rem;
+    line-height: 1.4;
+  }
+  .about-master__avatar {
+    justify-content: center;
+  }
+  .about-master__avatar img {
+    width: 160px;
+    height: 160px;
+  }
+  .link-more {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  /* Вступительный текст */
+  .intro-text {
+    padding: 40px 0 20px;
+  }
+  .intro-text__inner p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+  }
+
+  /* Галерея */
+  .gallery-slide {
+    flex: 0 0 100% !important;        /* один слайд на весь экран */
+  }
+  .gallery-slide img {
+    height: 220px;
+  }
+  .gallery-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+  .gallery-arrow--prev { left: 10px; }
+  .gallery-arrow--next { right: 10px; }
+  .gallery-dots {
+    bottom: 15px;
+    gap: 8px;
+  }
+
+  /* Блок с изображениями и текстом */
+  .familiar__images {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  .familiar__texts {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .familiar__text {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  /* Возрастное? */
+  .age-question {
+    padding: 50px 0;
+  }
+  .age-question__title {
+    font-size: 2.2rem;
+    padding-bottom: 30px;
+  }
+  .age-question__text {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  /* Пошаговый план (две колонки → одна) */
+  .target-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    max-width: 100%;
+  }
+  .target-column {
+    gap: 20px;
+  }
+  .target-item span {
+    font-size: 1.1rem;
+  }
+
+  /* Заголовки секций */
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+  .section-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  /* Кнопки мессенджеров */
+  .messengers {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 40px;
+  }
+  .messenger-btn img {
+    height: 45px;
+  }
+
+  /* Футер */
+  .footer {
+    padding: 16px 0;
+  }
+  .footer__inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer__logo {
+    height: 28px;
+  }
+  .footer__text {
+    font-size: 0.9rem;
+  }
+}
